@@ -17,13 +17,13 @@ The modules also include pretrained state-of-the-art networks, such as GoogLeNet
   *  Unfortunately, due to 'demand' for speaker slots, PyCon has only scheduled 1h30 for the workshop, rather than the 3h00 they originally suggested...
   *  Application : Reinforcement Learning
   *  Slides for the talk are [here](http://redcatlabs.com/2016-06-23_PyConSG-Workshop/), 
-     with an accompanying [blog post](http://blog.mdda.net/ai/2016/06/23/workshop-at-pycon-sg-2016)
+     with an accompanying [blog post](http://blog.mdda.net/ai/2016/06/23/workshop-at-pycon-sg-2016), which includes a video link
 
 * [DataScienceSG MeetUp](http://www.meetup.com/DataScience-SG-Singapore/) : 'Hardcore' session about Deep Learning (2.5 hours)
   *  Application : Anomaly Detection (mis-shaped MNIST digits)
   *  Application : Classifying unknown classes of images (~transfer learning)
   *  Slides for the talk are [here](http://redcatlabs.com/2016-07-23_DataScienceSG-DeepLearning-Workshop/), 
-     with an accompanying [blog post](http://blog.mdda.net/ai/2016/07/23/datascience-sg-workshop)
+     with an accompanying [blog post](http://blog.mdda.net/ai/2016/07/23/datascience-sg-workshop), which includes a video link
 
 * [Fifth Elephant, India](https://fifthelephant.in/2016/) : Deep Learning Workshop (6 hours : 4x 1.5hr classes in one day)
   *  Application : Classifying unknown classes of images (~transfer learning)
@@ -38,7 +38,41 @@ The modules also include pretrained state-of-the-art networks, such as GoogLeNet
 * [PyDataSG MeetUp](https://www.meetup.com/PyData-SG/events/235981761/) : Talk on RNNs and NLP (1.5 hours)
   *  Application : RNN Tagger (cleaned up a little)
   *  Slides for the talk are [here](http://redcatlabs.com/2017-01-23_PyDataSG_RNNs-for-NLP/), 
-     with an accompanying [blog post](http://blog.mdda.net/ai/2017/01/23/presentation-at-pydata), with a video link
+     with an accompanying [blog post](http://blog.mdda.net/ai/2017/01/23/presentation-at-pydata), which includes a video link
+
+* [TensorFlow &amp; Deep Learning MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/237032130/) : Talk on transfer learning (0.5 hours)
+  *  Application : Classifying unknown classes of images (~transfer learning)  *in TensorFlow*
+  *  Slides for the talk are [here](http://redcatlabs.com/2017-02-16_TFandDL_TransferLearning/#/), 
+     with an accompanying [blog post](http://blog.mdda.net/ai/2017/02/16/presentation-at-tensorflow), which includes a video link
+
+* [FOSSASIA 2017](http://2017.fossasia.org/) : Deep Learning Workshop (1 hour)
+  *  Application : Speech Recognition using a CNN
+  *  Slides for the talk are [here](http://redcatlabs.com/2017-03-18_FOSSASIA-Workshop/#/), 
+     with an accompanying [blog post](http://blog.mdda.net/ai/2017/03/18/presentation-at-FOSSASIA), which includes a video link
+
+* [TensorFlow &amp; Deep Learning MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/237860964/) : Talk on CNNs (0.5 hours)
+  *  Application : Speech Recognition using a CNN (non-workshop version)
+  *  Slides for the talk are [here]((http://redcatlabs.com/2017-03-20_TFandDL_IntroToCNNs/#/), 
+     with an accompanying [blog post](http://blog.mdda.net/ai/2017/03/20/presentation-at-tensorflow), which includes a video link
+
+* [TensorFlow &amp; Deep Learning MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/238584480/) : Generative Art : Style-Transfer (0.5 hours)
+  *  Application : Generative Art (Style-Transfer)
+  *  Slides for the talk are [here](http://redcatlabs.com/2017-04-13_TFandDL_ArtStyleTransfer/#/)
+
+* [APAC Machine Learning &amp; Data Science Community Summit](http://m.onoffmix.com/event/97444/content) : In the news : AlphaGo and Reinforcement Learning (0.75 hours)
+  *  Application : Bubble-Breaker in TensorFlow / Keras
+  *  Slides for the talk are [here](http://redcatlabs.com/2017-05-20_APAC-Summit/)
+     with an accompanying [blog post](http://blog.mdda.net/ai/2017/05/20/presentation-in-korea)
+
+* [TensorFlow &amp; Deep Learning MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/239252636/) : Text : Embeddings, RNNs and NER (~1 hour)
+  *  Application : BiDirectional RNNs for Case-Insensitive NER
+  *  Slides for the talk (including a more general introduction to NLP) are [here](http://redcatlabs.com/2017-05-25_TFandDL_TextAndRNNs/#/)
+     with an accompanying [blog post](http://blog.mdda.net/ai/2017/05/25/presentation-at-tensorflow), which includes a video link
+
+* [TensorFlow &amp; Deep Learning MeetUp](https://www.meetup.com/TensorFlow-and-Deep-Learning-Singapore/events/240386386/) : Advanced Text and Language (0.75 hours)
+  *  Application : Image Captioning (Flickr30k)
+  *  Slides for the talk are [here](http://redcatlabs.com/2017-06-22_TFandDL_Captioning/#/)
+     with an accompanying [blog post](http://blog.mdda.net/ai/2017/06/22/presentation-at-tensorflow), which includes a video link
 
 
 **NB : Ensure Conference Workshop announcement / blurb includes VirtualBox warning label**
@@ -71,8 +105,8 @@ And this repo can itself be run in 'local mode', using scripts in ```./local/```
 
 #### Currently working well
 
-*  Scripts to create working Fedora 23 installation inside VM
-   *  Has working ```virtualenv``` with ```Jupyter``` and ```TensorFlow / TensorBoard```
+*  Scripts to create working Fedora 25 installation inside VM
+   *  Has working ```Python3.x``` ```virtualenv``` with ```Jupyter``` and ```TensorFlow / TensorBoard```
 *  Script to transform the VM into a VirtualBox appliance
    *  Exposing ```Jupyter```, ```TensorBoard``` and ```ssh``` to host machine
 
@@ -82,13 +116,17 @@ And this repo can itself be run in 'local mode', using scripts in ```./local/```
 *  Locally hosted TensorFlow Playground  for :
    *  Visualising hidden layer, and effect of features, etc
 
+*  Locally hosted cnn demo for :
+   *  Demonstration of how a single CNN 3x3 filter works
 
-*  Create workshop notebooks (Lasagne / Theano)
+
+*  Existing workshop notebooks :
    *  Basics 
    *  MNIST
    *  MNIST CNN
    *  ImageNet : GoogLeNet
    *  ImageNet : Inception 3
+   *  CNN for simple Voice Recognition
    *  'Anomaly Detection' - identifying mis-shaped MNIST digits
    *  'Commerce' - repurpose a trained network to classify our stuff
    *  'Art' - Style transfer with Lasagne, but using GoogLeNet features for speed

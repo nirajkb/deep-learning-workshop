@@ -8,14 +8,11 @@ set -x
 cd /home/user
 source ./config/params
 
-#virtualenv --system-site-packages env
-#. env/bin/activate
-
-virtualenv-3 -p python3 --system-site-packages ./env3
+# Move to python-3.x exclusively
+virtualenv-3.6 -p python3 --system-site-packages ./env3
 . ./env3/bin/activate
 
 pip install --upgrade pip
-#pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.7.1-cp27-none-linux_x86_64.whl
 
 pip install -r ./config/requirements.txt 
 
@@ -28,7 +25,7 @@ python -m nltk.downloader averaged_perceptron_tagger
 # cp ./notebooks/images/logo.png ./env/lib/python2.7/site-packages/notebook/static/base/images/  # original : 260x56
 
 #logopath=./env/lib/python2.7/site-packages/notebook/static/base/images
-logopath=./env3/lib/python3.5/site-packages/notebook/static/base/images
+logopath=./env3/lib/python3.6/site-packages/notebook/static/base/images
 mv ${logopath}/logo.png ${logopath}/logo-orig_260x56.png
 cp ./notebooks/images/logo.png ${logopath}/
 
@@ -42,9 +39,13 @@ ln -s ../../presentation/reveal.js-2.6.2/img presentation
 popd
 
 # Download the latest tensorflow-slim-modelzoo 
-mkdir -p $notebook_dir/model/tensorflow_zoo
-cd $notebook_dir/model/tensorflow_zoo
-git clone https://github.com/tensorflow/models/
+if [ ! -d "$notebook_dir/model/tensorflow_zoo/models" ]; then
+  mkdir -p $notebook_dir/model/tensorflow_zoo
+  pushd $notebook_dir/model/tensorflow_zoo
+  git clone https://github.com/tensorflow/models/
+  popd
+fi
+
 
 
 echo "OMP_NUM_THREADS=4" >> ~/.bashrc

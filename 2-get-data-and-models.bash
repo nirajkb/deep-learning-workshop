@@ -17,7 +17,7 @@ RCL_BASE=http://redcatlabs.com/downloads/deep-learning-workshop/notebooks/data
 mkdir -p ./notebooks/data
 pushd ./notebooks/data
 
-## thousand lines with synset IDs and names 
+## One thousand lines with synset IDs and names 
 if [ ! -e "imagenet_synset_words.txt" ]; then
   wget http://dl.caffe.berkeleyvision.org/caffe_ilsvrc12.tar.gz
   gunzip caffe_ilsvrc12.tar.gz 
@@ -29,8 +29,8 @@ fi
 popd
 
 
-mkdir -p ./notebooks/data/VGG
-pushd ./notebooks/data/VGG
+mkdir -p ./notebooks/data/imagenet-theano
+pushd ./notebooks/data/imagenet-theano
 
 ## VGG16 model (converted from Caffee, importable into Keras)
 #   https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3
@@ -61,10 +61,24 @@ fi
 popd
 
 
+
+## GoogLeNet model (Google)
+
+mkdir -p ./notebooks/data/imagenet-theano
+pushd ./notebooks/data/imagenet-theano
+
+if [ ! -e "blvc_googlenet.pkl" ]; then
+  # 27Mb
+  wget -N https://s3.amazonaws.com/lasagne/recipes/pretrained/imagenet/blvc_googlenet.pkl
+fi
+
+popd
+
+
 ## inception_v3 model (Google)
 
-mkdir -p ./notebooks/data/inception3
-pushd ./notebooks/data/inception3
+mkdir -p ./notebooks/data/imagenet-theano
+pushd ./notebooks/data/imagenet-theano
 
 if [ ! -e "inception_v3.pkl" ]; then
   # 95Mb
@@ -73,18 +87,6 @@ fi
 
 popd
 
-
-## GoogLeNet model (Google)
-
-mkdir -p ./notebooks/data/googlenet
-pushd ./notebooks/data/googlenet
-
-if [ ! -e "blvc_googlenet.pkl" ]; then
-  # 27Mb
-  wget -N https://s3.amazonaws.com/lasagne/recipes/pretrained/imagenet/blvc_googlenet.pkl
-fi
-
-popd
 
 
 
@@ -176,12 +178,13 @@ fi
 
 if [ ! -e "en.wikipedia.2010.100K.txt" ]; then
   # Retrieve wikipedia dump
-  wget http://corpora2.informatik.uni-leipzig.de/downloads/eng_wikipedia_2010_100K-text.tar.gz
-  if [ ! -e "eng_wikipedia_2010_100K-text.tar.gz" ]; then
+  wget http://corpora2.informatik.uni-leipzig.de/downloads/eng_wikipedia_2010_100K.tar.gz
+  if [ ! -e "eng_wikipedia_2010_100K.tar.gz" ]; then
     # Fall-back source of the same data
     wget ${RCL_BASE}/RNN/eng_wikipedia_2010_100K-text.tar.gz
+    mv eng_wikipedia_2010_100K-text.tar.gz eng_wikipedia_2010_100K.tar.gz 
   fi
-  tar -xzf eng_wikipedia_2010_100K-text.tar.gz
+  tar -xzf eng_wikipedia_2010_100K.tar.gz 
   mv eng_wikipedia_2010_100K-sentences.txt en.wikipedia.2010.100K.txt
   rm eng_wikipedia*
 fi
@@ -234,4 +237,5 @@ popd
 
 
 ## Suitable 'commercial categories' : makes of car?
+
 
